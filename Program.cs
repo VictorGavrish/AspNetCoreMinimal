@@ -9,7 +9,7 @@ namespace AspnetcoreHelloworld
     {
         public static void Main(string[] args)
         {
-            WebHost.StartWith(app => app.Run(async (context) => await context.Response.WriteAsync("Hello World!"))).WaitForShutdown();
+            WebHost.CreateDefaultBuilder().Configure(app => app.Run(async (context) => await context.Response.WriteAsync("Hello World!"))).Build().Run();
         }
     }
 }
